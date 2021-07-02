@@ -30,9 +30,11 @@ let data = [
 // Routes
 
 // Basic route that sends the user first to the AJAX Page
-app.get("/", (req, res) => res.sendFile(__dirname + "/public/index.html"));
+app.get("/", (req, res) => res.sendFile(__dirname + "./public/index.html"));
 
-app.get("/notes", (req, res) => res.sendFile(__dirname + "/public/notes.html"));
+app.get("/notes", (req, res) =>
+  res.sendFile(__dirname + "./public/notes.html")
+);
 
 app.delete("/api/notes/:id", (req, res) => {
   console.log("params", req.params);
